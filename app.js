@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var multer=require('multer');
 var fs=require('fs')
 var index = require('./routes/index');
-var users = require('./routes/users');
+
 
 var app = express();
 
@@ -53,8 +53,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(8080,function(){
-  console.log("Server Online");
+app.listen(process.env.PORT ,function(){
+  console.log("Server online")
 })
 
 module.exports = app;
